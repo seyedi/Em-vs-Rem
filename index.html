@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="emvsrem" ng-controller="AppCtrl" style="font-size: {{html_fontSize}};">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EM vs. REM | CSS-Tricks.ir</title>
+
+  <link href="css/normalize.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+
+  <script defer src="js/angular.min.js"></script>
+  
+</head>
+
+<body>
+  
+  <header class="header">
+
+<pre class="code-container"><span class="token-selector">html</span> { <span class="token-property">font-size</span>: <span class="token-function" contenteditable ng-model="html_fontSize" ng-bind="html_fontSize"></span> <span class="token-comment" ng-show="!htmlIsPx"> /* ({{html(html_fontSize)}} * 16px) = {{html_fontSize_px = html(html_fontSize) * 16}}px */ </span> }</pre>
+    
+  </header>
+
+  <main class="main" style="font-size: {{main_fontSize}};">
+
+    <section class="card-holder">
+
+<pre class="code-container"><span class="token-selector">.main</span> { <span class="token-property">font-size</span>: <span class="token-function"  contenteditable ng-model="main_fontSize" ng-bind="main_fontSize"></span> <span class="token-comment" ng-show="!mainIsPx"> /* ({{main(main_fontSize)}} * {{html_fontSize_px}}px) = {{main_fontSize_px = main(main_fontSize) * html_fontSize_px}}px */</span> }</pre>
+
+
+      <div class="flex-container">
+        <article class="card card--em">
+          
+          <h2 class="card__title" style="font-size: {{em_fontSize}}; padding: {{em_pad}};">EM</h2>
+
+<pre class="code-container"><span class="token-selector">.em</span> { 
+  <span class="token-property">font-size</span>: <span contenteditable ng-model="em_fontSize" class="token-function" ng-bind="em_fontSize"></span>; <span class="token-comment"> /* ({{makeItLookGood(em_fontSize)}} * {{main_fontSize_px}}) = {{em_fontSize_px =  makeItLookGood(em_fontSize) * main_fontSize_px}}px */</span>
+&nbsp;&nbsp;<span class="token-property">padding</span>: <span contenteditable ng-model="em_pad" class="token-function" ng-bind="em_pad"></span>; <span class="token-comment"> /* ({{makeItLookGood(em_pad)}} * {{em_fontSize_px}}) = {{makeItLookGood(em_pad) * em_fontSize_px}}px */</span>
+}</pre>
+
+        </article>
+
+        <article class="card card--rem">
+          
+          <h2 class="card__title" style="font-size: {{rem_fontSize}}; padding: {{rem_pad}};">REM</h2>
+
+<pre class="code-container"><span class="token-selector">.rem</span> { 
+  <span class="token-property">font-size</span>: <span contenteditable ng-model="rem_fontSize" class="token-function" ng-bind="rem_fontSize"></span>; <span class="token-comment"> /* ({{makeItLookGood(rem_fontSize)}} * {{html_fontSize_px}}) = {{makeItLookGood(rem_fontSize) * html_fontSize_px}}px */</span>
+&nbsp;&nbsp;<span class="token-property">padding</span>: <span contenteditable ng-model="rem_pad" class="token-function" ng-bind="rem_pad"></span>; <span class="token-comment"> /* ({{makeItLookGood(rem_pad)}} * {{html_fontSize_px}}) = {{makeItLookGood(rem_pad) * html_fontSize_px}}px */</span>
+}</pre>
+
+        </article>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer></footer>
+
+
+
+  <script defer src="js/script.js"></script>
+</body>
+</html>
