@@ -40,9 +40,10 @@ body {
 }
 
 .card {
-  flex-basis: 300px;
+  flex-basis: 250px;
   margin-top: 50px;
   margin-bottom: 50px;
+  max-width: 100%;
 }
 
 .card__title {
@@ -57,7 +58,7 @@ body {
 .code-container {
   position: relative;
   font-size: 16px;
-  display: table;
+  display: block;
   background-color: #272822;
   overflow-x: auto;
   overflow-y: hidden;
