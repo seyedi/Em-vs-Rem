@@ -33,8 +33,8 @@
           <h2 class="card__title" style="font-size: {{em_fontSize}}; padding: {{em_pad}};">EM</h2>
 
 <pre class="code-container"><span class="token-selector">.em</span> { 
-  <span class="token-property">font-size</span>: <span contenteditable ng-model="em_fontSize" class="token-function" ng-bind="em_fontSize"></span>; <span class="token-comment"> /* ({{makeItLookGood(em_fontSize)}} * {{main_fontSize_px}}) = {{em_fontSize_px =  makeItLookGood(em_fontSize) * main_fontSize_px}}px */</span>
-&nbsp;&nbsp;<span class="token-property">padding</span>: <span contenteditable ng-model="em_pad" class="token-function" ng-bind="em_pad"></span>; <span class="token-comment"> /* ({{makeItLookGood(em_pad)}} * {{em_fontSize_px}}) = {{makeItLookGood(em_pad) * em_fontSize_px}}px */</span>
+  <span class="token-property">font-size</span>: <span contenteditable ng-model="em_fontSize" class="token-function" ng-bind="em_fontSize"></span>; <span class="token-comment"> /* ({{makeItLookGood(em_fontSize)}} * {{main_fontSize_px}}) = {{em_fontSize_px =  roundMeUp(makeItLookGood(em_fontSize) * main_fontSize_px)}}px */</span>
+&nbsp;&nbsp;<span class="token-property">padding</span>: <span contenteditable ng-model="em_pad" class="token-function" ng-bind="em_pad"></span>; <span class="token-comment"> /* ({{makeItLookGood(em_pad)}} * {{em_fontSize_px}}) = {{roundMeUp(makeItLookGood(em_pad) * em_fontSize_px)}}px */</span>
 }</pre>
 
         </article>
@@ -44,8 +44,8 @@
           <h2 class="card__title" style="font-size: {{rem_fontSize}}; padding: {{rem_pad}};">REM</h2>
 
 <pre class="code-container"><span class="token-selector">.rem</span> { 
-  <span class="token-property">font-size</span>: <span contenteditable ng-model="rem_fontSize" class="token-function" ng-bind="rem_fontSize"></span>; <span class="token-comment"> /* ({{makeItLookGood(rem_fontSize)}} * {{html_fontSize_px}}) = {{makeItLookGood(rem_fontSize) * html_fontSize_px}}px */</span>
-&nbsp;&nbsp;<span class="token-property">padding</span>: <span contenteditable ng-model="rem_pad" class="token-function" ng-bind="rem_pad"></span>; <span class="token-comment"> /* ({{makeItLookGood(rem_pad)}} * {{html_fontSize_px}}) = {{makeItLookGood(rem_pad) * html_fontSize_px}}px */</span>
+  <span class="token-property">font-size</span>: <span contenteditable ng-model="rem_fontSize" class="token-function" ng-bind="rem_fontSize"></span>; <span class="token-comment"> /* ({{makeItLookGood(rem_fontSize)}} * {{html_fontSize_px}}) = {{roundMeUp(makeItLookGood(rem_fontSize) * html_fontSize_px)}}px */</span>
+&nbsp;&nbsp;<span class="token-property">padding</span>: <span contenteditable ng-model="rem_pad" class="token-function" ng-bind="rem_pad"></span>; <span class="token-comment"> /* ({{makeItLookGood(rem_pad)}} * {{html_fontSize_px}}) = {{roundMeUp(makeItLookGood(rem_pad) * html_fontSize_px)}}px */</span>
 }</pre>
 
         </article>

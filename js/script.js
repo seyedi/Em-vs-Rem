@@ -134,20 +134,25 @@ app
   
   $scope.makeItLookGood = function(val) {
     if(val.indexOf('px') > -1) {
-      return unitTrim(val, 'px');
+      return Math.round(unitTrim(val, 'px') * 10) / 10;
     }
 
     else if(val.indexOf('rem') > -1) {
-      return unitTrim(val, 'rem');
+      return Math.round(unitTrim(val, 'rem') * 10) / 10;
     }
 
     else if(val.indexOf('em') > -1) {
-      return unitTrim(val, 'em');
+      return Math.round(unitTrim(val, 'em') * 10) / 10;
     }
 
     else {
       return null;
     }
+  }
+
+
+  $scope.roundMeUp = function(val) {
+    return Math.round(val * 10) / 10;
   }
 
   // $scope.rem2px = null;
